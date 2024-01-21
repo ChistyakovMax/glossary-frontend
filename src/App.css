@@ -1,6 +1,7 @@
 #root {
   width: 100%;
-  color: black;
+  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -32,15 +33,51 @@
   margin-bottom: 55px;
 }
 
+.tab-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+.tab-button {
+  text-decoration: none;
+  outline: none;
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 25px;
+  color: #000;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: auto;
+  font-weight: 400;
+  padding: 10px 15px;
+  transition: all 0.5s ease;
+}
+
+.tab-button:hover {
+  border-color: #16d9e3;
+  color: #16d9e3;
+  transform: scale(0.9);
+}
+
+.tab-button_active {
+  color: #16d9e3;
+  border: 2px solid #16d9e3;
+  transition: none;
+  transform: none;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   gap: 25px;
 }
 
 .card {
+  background-color: #fff;
   box-sizing: border-box;
   width: 250px;
   height: 250px;
@@ -60,13 +97,31 @@
   line-height: auto;
 }
 
+.mindmap {
+  width: 95%;
+  height: auto;
+  border: 2px solid #000;
+  border-radius: 25px;
+}
+
 @media (max-width: 768px) {
   .title {
     font-size: 6vw;
   }
 
   .subtitle {
+    width: 90%;
     font-size: 5vw;
+    text-wrap: wrap;
+  }
+
+  .tab-buttons {
+    gap: 5vw;
+  }
+
+  .tab-button {
+    font-size: 4vw;
+    padding: 1vw 2vw;
   }
 
   .container {

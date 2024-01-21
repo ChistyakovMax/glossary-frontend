@@ -8,6 +8,7 @@ const mainApi = axios.create({
   },
 });
 
+// Обработка ошибок должна быть асинхронной
 const responseHandler = async (res) => {
   if (res.status >= 200 && res.status < 300) {
     return res.data;
@@ -30,7 +31,8 @@ export const getData = async () => {
     });
     return responseHandler(response);
   } catch (error) {
+    // Обрабатываем ошибку, например, выводим в консоль
     console.error('Ошибка при получении данных:', error.message);
-    throw error; // Перебрасываем для дальнейшей обработки
+    throw error; // Перебрасываем ошибку для дальнейшей обработки
   }
 };
